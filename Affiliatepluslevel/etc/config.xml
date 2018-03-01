@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_AffiliateplusProgram
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <affiliateplus>
+            <level>
+                <enable>1</enable>
+            </level>
+            <email>
+                <multilevel_is_sent_email_account_new_transaction>1</multilevel_is_sent_email_account_new_transaction>
+                <multilevel_is_sent_email_account_updated_transaction>1</multilevel_is_sent_email_account_updated_transaction>
+                <multilevel_new_transaction_account_email_template>affiliateplus_email_multilevel_new_transaction_account_email_template</multilevel_new_transaction_account_email_template>
+                <multilevel_updated_transaction_account_email_template>affiliateplus_email_multilevel_updated_transaction_account_email_template</multilevel_updated_transaction_account_email_template>
+                <multilevel_reduce_commission_account_email_template>affiliateplus_email_multilevel_reduce_commission_account_email_template</multilevel_reduce_commission_account_email_template>
+            </email>
+        </affiliateplus>
+    </default>
+</config>

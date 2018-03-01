@@ -1,0 +1,31 @@
+<?php
+/**
+ * Sales transaction history template
+ */
+?>
+<?php
+$storeId = $block->getStoreId();
+$check_responsvie = $block->getStyleConfig($storeId);
+if($check_responsvie)
+    $class_name = 'col-lg-9 col-md-9 col-sm-12 col-xs-12';
+else
+    $class_name = 'col-lg-9 col-md-9 col-sm-9 col-xs-9';
+?>
+
+<div class="aff-main-content <?php echo $class_name; ?>">
+    <div class="aff-title">
+        <h1><?php echo __('Tier Affiliates') ?></h1>
+    </div>
+    <?php echo $block->getLayout()->getMessagesBlock()->getGroupedHtml(); ?>
+    <?php if ($block->getCollection()->getSize()): ?>
+        <?php echo $block->getPagerHtml() ?>
+        <?php echo $block->getGridHtml() ?>
+        <?php echo $block->getPagerHtml() ?>
+    <?php else: ?>
+        <div  style="float: left; width: 100%;">
+            <p class="note-msg">
+                <?php echo __('There are no tier affiliates matching this selection.') ?>
+            </p>
+        </div>
+    <?php endif ?>
+</div>

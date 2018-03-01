@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_AffiliateplusProgram
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="affiliateplus_adminhtml_add_column_account_grid">
+        <observer name="affiliateplus_adminhtml_add_column_account_grid" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\AddColumnToAccountGrid" shared="false" />
+    </event>
+
+    <event name="affiliateplus_adminhtml_join_account_other_table">
+    <observer name="affiliateplus_adminhtml_join_account_other_table" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\JoinAccountToReferral" shared="false" />
+    </event>
+
+    <event name="affiliateplus_adminhtml_add_tier_to_account_tab">
+        <observer name="affiliateplus_adminhtml_add_tier_to_account_tab" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\AddTabToAccount" shared="false" />
+    </event>
+    <!--River code this feature-->
+    <event name="affiliateplus_adminhtml_add_account_info_fieldset">
+        <observer name="affiliateplus_adminhtml_add_account_info_fieldset" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\AddFieldToAccountFieldset" shared="false" />
+    </event>
+
+    <event name="affiliateplus_adminhtml_after_save_account">
+        <observer name="affiliateplus_adminhtml_after_save_account" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\AfterSaveAccount" shared="false" />
+    </event>
+
+    <event name="affiliateplus_adminhtml_add_transaction_tab">
+        <observer name="affiliateplus_adminhtml_add_transaction_tab" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\AddTabToTransaction" shared="false" />
+    </event>
+
+    <event name="affiliateplus_adminhtml_join_transaction_other_table">
+        <observer name="affiliateplus_adminhtml_join_transaction_other_table" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\JoinTransactionToOtherTable" shared="false" />
+    </event>
+
+    <event name="affiliateplus_adminhtml_add_column_account_transaction_grid">
+        <observer name="affiliateplus_adminhtml_add_column_account_transaction_grid" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\AddColumnAccountTransactionGrid" shared="false" />
+    </event>
+
+    <event name="affiliateplus_adminhtml_after_set_transaction_collection">
+        <observer name="affiliateplus_adminhtml_after_set_transaction_collection" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\SetTransactionCollection" shared="false" />
+    </event>
+
+    <!--<event name="affiliateplusprogram_adminhtml_edit_actions">-->
+        <!--<observer name="affiliateplusprogram_adminhtml_edit_actions" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\AddTierFieldToProgram" shared="false" />-->
+    <!--</event>-->
+
+    <event name="affiliateplus_adminhtml_prepare_commission">
+        <observer name="affiliateplus_adminhtml_prepare_commission" instance="Magestore\Affiliatepluslevel\Observer\Adminhtml\AdminhtmlPrepareCommission" shared="false" />
+    </event>
+</config>

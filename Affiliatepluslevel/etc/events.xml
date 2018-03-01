@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Affiliatepluslevel
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="affiliateplus_recalculate_commission">
+        <observer name="affiliateplus_recalculate_commission" instance="Magestore\Affiliatepluslevel\Observer\CreatedTransactionAndRecalculateCommission" shared="false" />
+    </event>
+
+    <event name="update_tiercommission_to_tieraffiliate_partial_invoice">
+        <observer name="update_tiercommission_to_tieraffiliate_partial_invoice" instance="Magestore\Affiliatepluslevel\Observer\UpdateTiercommissionToTieraffiliatePartialInvoice" shared="false" />
+    </event>
+
+    <event name="update_tiercommission_to_transaction_partial_invoice">
+        <observer name="update_tiercommission_to_transaction_partial_invoice" instance="Magestore\Affiliatepluslevel\Observer\UpdateTiercommissionToTransactionPartialInvoice" shared="false" />
+    </event>
+
+    <event name="update_tiercommission_to_tieraffiliate_partial_refund">
+        <observer name="update_tiercommission_to_tieraffiliate_partial_refund" instance="Magestore\Affiliatepluslevel\Observer\UpdateTiercommissionToTieraffiliatePartialRefund" shared="false" />
+    </event>
+
+    <event name="affiliateplus_reduce_transaction">
+        <observer name="affiliateplus_reduce_transaction" instance="Magestore\Affiliatepluslevel\Observer\ReduceTransaction" shared="false" />
+    </event>
+
+    <event name="affiliateplus_cancel_transaction">
+        <observer name="affiliateplus_cancel_transaction" instance="Magestore\Affiliatepluslevel\Observer\CancelTransaction" shared="false" />
+    </event>
+
+    <event name="affiliateplus_reset_transaction_commission">
+        <observer name="affiliateplus_reset_transaction_commission" instance="Magestore\Affiliatepluslevel\Observer\ResetTransactionCommission" shared="false" />
+    </event>
+    <!--calculate commission for tiers affiliate when active multiple program plugin-->
+    <event name="affiliateplusprogram_calculate_tier_commission">
+        <observer name="affiliateplusprogram_calculate_tier_commission" instance="Magestore\Affiliatepluslevel\Observer\CalculateProgramTierCommission" shared="false" />
+    </event>
+
+    <event name="affiliateplus_calculate_tier_commission">
+        <observer name="affiliateplus_calculate_tier_commission" instance="Magestore\Affiliatepluslevel\Observer\CalculateTierCommission" shared="false" />
+    </event>
+
+    <event name="affiliateplus_level_check_lifetime">
+        <observer name="affiliateplus_level_check_lifetime" instance="Magestore\Affiliatepluslevel\Observer\CheckLifeTime" shared="false" />
+    </event>
+</config>

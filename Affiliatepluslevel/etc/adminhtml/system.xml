@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Affiliatepluslevel
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../Backend/etc/system_file.xsd">
+  <system>
+    <section id="affiliateplus">
+      <group id="document_help">
+        <field id="affiliatepluslevel_user_guide" translate="label"  type="label" sortOrder="55"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Affiliate Plus Tier Commission User Guide</label>
+          <frontend_model>Magestore\Affiliatepluslevel\Block\Adminhtml\Field\Tiercommission</frontend_model>
+        </field>
+      </group>
+      <group id="level" translate="label" type="label" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Tier Commission Configuration</label>
+        <field id="enable" translate="label comment" type="select" sortOrder="5"
+               showInDefault="1" showInStore="1" showInWebsite="1">
+          <label>Enable Tier Commission Plugin</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+      </group>
+      <group id="commission" translate="label" type="label" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="multilevel_separator" translate="label" type="label" sortOrder="25"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Tier Commission</label>
+          <frontend_model>Magestore\Affiliatepluslevel\Block\Adminhtml\Field\Separator</frontend_model>
+          <comment></comment>
+        </field>
+        <field id="max_level" translate="label" type="text" sortOrder="28"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Number of Tiers</label>
+        </field>
+        <field id="tier_commission" translate="label" type="text" sortOrder="30"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label><![CDATA[Tier Commission Value & Type]]></label>
+          <frontend_model>Magestore\Affiliatepluslevel\Block\Adminhtml\System\Config\Form\Field\Tier</frontend_model>
+          <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+        </field>
+        <field id="use_sec_tier" translate="label" type="select" sortOrder="32"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Use different commission from 2nd order of a Customer</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+          <comment>Select "No" to apply the above commission to all orders</comment>
+        </field>
+        <field id="sec_tier_commission" translate="label" type="text" sortOrder="34"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label><![CDATA[Tier Commission Value & Type (from 2nd order)]]></label>
+          <frontend_model>Magestore\Affiliatepluslevel\Block\Adminhtml\System\Config\Form\Field\Sectier</frontend_model>
+          <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+          <depends>
+            <field id="use_sec_tier">1</field>
+          </depends>
+        </field>
+      </group>
+      <group id="email" translate="label" type="label" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="multilevel_separator" translate="label" type="label" sortOrder="215"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Tier Commission Email</label>
+          <frontend_model>Magestore\Affiliatepluslevel\Block\Adminhtml\Field\Separator</frontend_model>
+          <comment>10px</comment>
+        </field>
+        <field id="multilevel_is_sent_email_account_new_transaction" translate="label" type="select" sortOrder="220"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Send email to tier affiliate when a transaction is created</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+          <comment></comment>
+        </field>
+        <field id="multilevel_new_transaction_account_email_template" translate="label" type="select" sortOrder="225"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Email template sent to tier affiliate when a transaction is created</label>
+          <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+        </field>
+        <field id="multilevel_is_sent_email_account_updated_transaction" translate="label" type="select" sortOrder="230"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Send email to tier affiliate when transaction status is changed</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+          <comment>Use when transaction is canceled, completed or reduced commission</comment>
+        </field>
+        <field id="multilevel_updated_transaction_account_email_template" translate="label" type="select" sortOrder="240"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Email template sent to tier affiliate when transaction status is changed</label>
+          <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+          <comment>Apply when transaction is canceled or completed</comment>
+        </field>
+        <field id="multilevel_reduce_commission_account_email_template" translate="label" type="select" sortOrder="245"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Email template sent to tier affiliate when commission is reduced</label>
+          <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+          <comment>Email template sent to tier affiliate when commission is reduced</comment>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Affiliatepluslevel
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   
+    <body>
+        <referenceBlock name="account_navigatorxx">
+            <action method="addLink" >
+                <argument name="name" xsi:type="string">tiercommission</argument>
+                <argument name="path" xsi:type="string">affiliateplus/tiercommission/listtier</argument>
+                <argument name="label" xsi:type="string">Tier Affiliates</argument>
+                <argument name="disabled" xsi:type="helper" helper="Magestore\Affiliatepluslevel\Helper\Data::isModuleDisabled"></argument>
+                <argument name="order" xsi:type="string">51</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="account_navigator">
+            <action method="addLink" >
+                <argument name="name" xsi:type="string">tiercommission</argument>
+                <argument name="path" xsi:type="string">affiliateplus/tiercommission/listtier</argument>
+                <argument name="label" xsi:type="string">Tier Affiliates</argument>
+                <argument name="disabled" xsi:type="helper" helper="Magestore\Affiliatepluslevel\Helper\Data::isModuleDisabled"></argument>
+                <argument name="order" xsi:type="string">51</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

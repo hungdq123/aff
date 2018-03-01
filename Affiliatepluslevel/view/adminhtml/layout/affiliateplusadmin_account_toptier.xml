@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <container name="root" label="Root">
+        <block class="Magento\Backend\Block\Template" name="toptier_header" template="Magestore_Affiliatepluslevel::header.phtml"/>
+        <block class="Magestore\Affiliatepluslevel\Block\Adminhtml\Account\Edit\Tab\Toptier" name="account.edit.tab.toptier"/>
+        <!--<block class="Magestore\Affiliatepluslevel\Block\Adminhtml\Account\Serializer" name="related_grid_serializer">-->
+            <!--<action method="initSerializerBlock">-->
+                <!--<grid_block_name>account.edit.tab.toptier</grid_block_name>-->
+                <!--<hidden_input_name>map_toptier_id</hidden_input_name>-->
+            <!--</action>-->
+            <!--<arguments>-->
+                <!--<argument name="grid_block" xsi:type="string">account.edit.tab.toptier</argument>-->
+                <!--<argument name="input_element_name" xsi:type="string">map_toptier_id</argument>-->
+                <!--<argument name="callback" xsi:type="string">initSerializerBlock</argument>-->
+                <!--<argument name="hidden_input_name" xsi:type="string">map_toptier_id</argument>-->
+            <!--</arguments>-->
+        <!--</block>-->
+    </container>
+</page>
+

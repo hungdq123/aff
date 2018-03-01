@@ -1,0 +1,58 @@
+<?php
+/**
+ * Popup Header
+ */
+?>
+<div class="content-header">
+    <h1><?php echo __('Select upper tier affiliate') ?></h1>
+    <div class="affiliateplus-close-tinybox" style="cursor: pointer; color: #D00; float: right; font-weight: bold;" onclick="TINY.box.hide();">
+        <span title="<?php echo __('Close') ?>"><?php echo __('Close') ?> [X]</span>
+    </div>
+</div>
+<script type="text/javascript">
+    require([
+        'prototype',
+        'jquery'
+    ], function($){
+        var MapToptier = Class.create();
+        MapToptier.prototype = {
+            initialize: function(changeToptierUrl){
+                this.changeToptierUrl = changeToptierUrl;
+
+            },
+            changeToptier : function(toptierId)
+            {
+                var url = this.changeToptierUrl;
+                url += 'account_id/' + toptierId;
+                new Ajax.Request(url,{method: 'get', onComplete: function(response){updateToptierInfo(JSON.parse(response.responseText));} ,onFailure: ""});
+            }
+        }
+
+        function updateToptierInfo(res)
+        {
+            jQuery('#account_toptier').val(res.account_name);
+            jQuery('#account_toptier_id').val(res.account_id);
+            if (jQuery('#account_toptier_id').val()) {
+                jQuery('#account_level').val(parseInt(res.level) + 1);
+            } else {
+                jQuery('#account_level').val('');
+            }
+        }
+        var mapToptier = new MapToptier('<?php echo $this->getUrl('affiliateplusadmin/account/changeToptier',array('_secure'=>true)) ?>')
+
+        changeUpTier = function (el,id) {
+            var trElements = jQuery('#toptiergrid_table').children('tbody').children('tr');
+            for(var i = 0; i < trElements.length; i++){
+                if(trElements[i].down('input').value == id){
+                    if(trElements[i].down('input').checked == false){
+                        trElements[i].down('input').checked = true;
+                        mapToptier.changeToptier(id);
+                    }else{
+                        trElements[i].down('input').checked = false;
+                        mapToptier.changeToptier('');
+                    }
+                }
+            }
+        }
+    });
+</script>
